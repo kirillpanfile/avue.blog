@@ -14,7 +14,7 @@ const icons = ref<{ name: string; path: string }[]>([
   <header class="w-full border border-b p-2">
     <div class="max-w-7xl mx-auto flex items-center justify-between">
       <nuxt-link to="/">
-        <nuxt-img src="/icon.png" alt="logo" title="A VUE BLOG" class="w-14" />
+        <img src="@/public/Icon.png" class="w-16 h-16" alt="logo" title="A VUE BLOG" />
       </nuxt-link>
       <nav class="flex gap-8 items-center list-none">
         <li v-for="({ title, path }, index) in links" :key="index">
