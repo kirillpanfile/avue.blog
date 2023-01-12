@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { LargeArticle as article } from '@/constants/articles';
+
 const ShowCaseArticle = defineAsyncComponent(async function () {
   return await import(
     /* webpackChunkName: "ShowCaseArticle" */ '@/components/article/ShowCaseArticle.vue'
@@ -21,6 +23,6 @@ const ShowCaseArticle = defineAsyncComponent(async function () {
         repudiandae temporibus, tempore saepe molestias voluptatem.
       </p>
     </section>
-    <ShowCaseArticle />
+    <ShowCaseArticle :article="article" />
   </div>
 </template>
