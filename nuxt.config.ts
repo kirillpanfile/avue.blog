@@ -7,19 +7,13 @@ export default defineNuxtConfig({
         { name: 'viewport', content: 'width=device-width, initial-scale=1' },
         { hid: 'description', name: 'description', content: 'A vue blog' }
       ],
-      link: [
-        { rel: 'icon', type: 'image/x-icon', href: 'https://i.ibb.co/tsS37Dp/icon.png' }
-      ]
-    }
+      link: [{ rel: 'icon', type: 'image/x-icon', href: 'https://i.ibb.co/tsS37Dp/icon.png' }]
+    },
+
+    pageTransition: { name: 'page', mode: 'out-in' }
   },
 
-  modules: [
-    '@pinia/nuxt',
-    '@nuxtjs/tailwindcss',
-    '@nuxt/image-edge',
-    'nuxt-icon',
-    '@kevinmarrec/nuxt-pwa'
-  ],
+  modules: ['@pinia/nuxt', '@nuxtjs/tailwindcss', '@nuxt/image-edge', 'nuxt-icon', '@kevinmarrec/nuxt-pwa'],
 
   pwa: {
     meta: {
