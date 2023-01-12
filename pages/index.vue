@@ -1,10 +1,12 @@
 <script setup lang="ts">
 import { LargeArticle as article } from '@/constants/articles';
+import { TinyArticle as tinyArticle } from '@/constants/articles';
 
 const ShowCaseArticle = defineAsyncComponent(async function () {
-  return await import(
-    /* webpackChunkName: "ShowCaseArticle" */ '@/components/article/ShowCaseArticle.vue'
-  );
+  return await import(/* webpackChunkName: "ShowCaseArticle" */ '@/components/article/ShowCaseArticle.vue');
+});
+const ShowTinyCaseArticle = defineAsyncComponent(async function () {
+  return await import(/* webpackChunkName: "ShowCaseArticle" */ '@/components/article/ShowTinyCaseArticle.vue');
 });
 </script>
 
@@ -17,12 +19,12 @@ const ShowCaseArticle = defineAsyncComponent(async function () {
       <h1 class="text-3xl">Welcome to <span class="font-bold">A VUE BLOG</span></h1>
 
       <p class="mt-4">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius quisquam
-        necessitatibus deserunt. Lorem ipsum dolor sit amet consectetur adipisicing elit.
-        Aperiam maxime quos delectus facere sed exercitationem expedita quis recusandae
-        repudiandae temporibus, tempore saepe molestias voluptatem.
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius quisquam necessitatibus deserunt. Lorem ipsum
+        dolor sit amet consectetur adipisicing elit. Aperiam maxime quos delectus facere sed exercitationem expedita
+        quis recusandae repudiandae temporibus, tempore saepe molestias voluptatem.
       </p>
     </section>
     <ShowCaseArticle :article="article" />
+    <ShowTinyCaseArticle :article="tinyArticle" />
   </div>
 </template>

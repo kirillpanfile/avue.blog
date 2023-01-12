@@ -1,4 +1,5 @@
 import { ILargeArticle } from './../types.d';
+import { ITinyArticle } from './../types.d';
 
 export const LargeArticle = {
   title: 'Optimizing CSS for faster page loads',
@@ -15,3 +16,17 @@ export const LargeArticle = {
   slug: 'optimizing-css-for-faster-page-loads',
   timestamp: 10
 } satisfies ILargeArticle;
+
+export const TinyArticle = {
+  title: 'Css Grid',
+  image: {
+    file: 'https://kajabi-storefronts-production.kajabi-cdn.com/kajabi-storefronts-production/blogs/2147485209/images/WgUgHhj8Tl64ZsgQfa4G_file.jpg',
+    alt: 'Css Grid',
+    title: 'Css Grid'
+  },
+  category: 'Nuxt.js',
+  description: 'The CSS Grid Layout Module offers a grid-based layout system, with rows and columns, making it easier to design web pages without having to use floats and positioning',
+  readTime: '3 min read',
+  slug: 'css-grid',
+  timestamp: 20
+} satisfies ITinyArticle
