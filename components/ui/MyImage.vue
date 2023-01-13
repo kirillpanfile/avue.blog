@@ -1,14 +1,15 @@
 <script setup lang="ts">
-import type { image } from '~/types';
-import { PropType } from 'vue';
+import { PropType } from 'vue'
+import type { image } from '~/types'
 
 const props = defineProps({
   image: {
     type: Object as PropType<image>,
-    required: true
-  }
-});
-const { file, alt, title } = props.image;
+    required: true,
+  },
+})
+
+const { file, alt, title } = toRefs(props.image)
 </script>
 
 <template>
