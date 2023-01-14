@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import appService from '~~/services/app.service'
 import {
   LargeArticle as article,
   TinyArticle as tinyArticle,
@@ -14,6 +15,8 @@ const ShowTinyCaseArticle = defineAsyncComponent(async function () {
     /* webpackChunkName: "ShowCaseArticle" */ '@/components/article/ShowTinyCaseArticle.vue'
   )
 })
+
+appService.getArticle()
 </script>
 
 <template>
