@@ -16,8 +16,8 @@ const MyInput = defineAsyncComponent(async function () {
   )
 })
 
-const test1 = ref('')
-const test2 = ref('')
+const email = ref('')
+const password = ref('')
 </script>
 <template>
   <div class="m-auto">
@@ -25,12 +25,12 @@ const test2 = ref('')
     <div class="flex gap-8 mt-8 items-center h-max">
       <div class="flex flex-col gap-8">
         <MyInput
-          v-model="test1"
+          v-model="email"
           title="EMAIL ADDRESS"
           placeholder="name@example.com"
         />
         <MyInput
-          v-model="test2"
+          v-model="password"
           title="PASSWORD"
           placeholder="password"
           :password="true"

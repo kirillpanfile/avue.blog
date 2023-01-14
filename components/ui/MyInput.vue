@@ -40,7 +40,7 @@ const getInputType = (flag: boolean) => {
     >
     <input
       v-if="!props.password"
-      class="outline-none border-b-gray-400 border-1 border-b px-2 py-1 select-none"
+      class="outline-none w-[350px] border-b-gray-400 border-1 border-b px-2 py-1 select-none"
       type="text"
       name="input"
       :placeholder="props.placeholder"

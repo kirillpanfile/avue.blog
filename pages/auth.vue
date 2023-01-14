@@ -1,10 +1,17 @@
 <script lang="ts" setup>
-const TheSignUp = defineAsyncComponent(async function () {
+const TheLogIn = defineAsyncComponent(async function () {
   return await import(
-    /* webpackChunkName: "ShowCaseArticle" */ '@/components/auth/TheSignUp.vue'
+    /* webpackChunkName: "ShowCaseArticle" */ '~~/components/auth/TheLogIn.vue'
+  )
+})
+const TheRegister = defineAsyncComponent(async function () {
+  return await import(
+    /* webpackChunkName: "ShowCaseArticle" */ '~~/components/auth/TheRegister.vue'
   )
 })
 </script>
 <template>
-  <TheSignUp />
+  <TheLogIn />
+  <hr />
+  <TheRegister />
 </template>
