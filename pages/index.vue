@@ -8,6 +8,7 @@ const ShowCaseArticle = defineAsyncComponent(async function () {
 const ShowTinyCaseArticle = defineAsyncComponent(async function () {
   return await import(/* webpackChunkName: "ShowCaseArticle" */ '@/components/article/ShowTinyCaseArticle.vue');
 });
+
 </script>
 
 <template>
@@ -16,7 +17,9 @@ const ShowTinyCaseArticle = defineAsyncComponent(async function () {
       <Icon name="material-symbols:home-rounded" /> - Home Page
     </section>
     <section class="w-full max-32 mt-4 flex justify-center flex-col">
-      <h1 class="text-3xl">Welcome to <span class="font-bold">A VUE BLOG</span></h1>
+      <h1 class="text-3xl">
+        Welcome to <span class="font-bold">A VUE BLOG</span>
+      </h1>
 
       <p class="mt-4">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius quisquam necessitatibus deserunt. Lorem ipsum

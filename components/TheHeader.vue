@@ -4,13 +4,13 @@ const links = ref<{ title: string; path: string }[]>([
   { title: 'Categories', path: '/' },
   { title: 'Search', path: '/' },
   { title: 'About', path: '/' },
-  { title: 'Sign In', path: '/' }
-]);
+  { title: 'Sign In', path: '/' },
+])
 
 const icons = ref<{ name: string; path: string }[]>([
   { name: 'grommet-icons:github', path: '/' },
-  { name: 'material-symbols:bedtime-outline-rounded', path: '/' }
-]);
+  { name: 'material-symbols:bedtime-outline-rounded', path: '/' },
+])
 </script>
 
 <template>

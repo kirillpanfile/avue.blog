@@ -7,7 +7,7 @@ export const LargeArticle = {
   image: {
     file: 'https://i.ibb.co/m4mgpbz/large.png',
     alt: 'Optimizing CSS for faster page loads',
-    title: 'Optimizing CSS for faster page loads'
+    title: 'Optimizing CSS for faster page loads',
   },
   category: 'Nuxt.js',
   description:
