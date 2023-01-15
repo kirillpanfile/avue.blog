@@ -28,7 +28,7 @@ const icons = ref<{ name: string; path: string }[]>([
         <li v-for="({ title, path }, index) in links" :key="index">
           <nuxt-link :to="path">{{ title }}</nuxt-link>
         </li>
-        <li v-for="({ name, path }, index) in icons" :key="index">
+        <li v-for="({ name }, index) in icons" :key="index">
           <Icon :name="name" class="w-5 h-5" />
         </li>
       </nav>
