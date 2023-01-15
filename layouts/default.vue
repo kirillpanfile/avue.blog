@@ -17,6 +17,7 @@ const TheFooter = defineAsyncComponent(async function () {
     <TheHeader />
     <slot></slot>
     <TheFooter />
+    <notifications />
   </main>
 </template>
 

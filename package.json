@@ -14,34 +14,38 @@
     "clean": "rm -rf .nuxt dist .output"
   },
   "devDependencies": {
-    "nuxt": "3.0.0",
     "@babel/core": "^7.20.2",
     "@commitlint/cli": "^17.2.0",
     "@commitlint/config-conventional": "^17.2.0",
     "@kevinmarrec/nuxt-pwa": "^0.14.1",
-    "@nuxtjs/eslint-config-typescript": "^12.0.0",
     "@nuxt/image-edge": "^1.0.0-27840416.dc1ed65",
+    "@nuxtjs/eslint-config-typescript": "^12.0.0",
     "@nuxtjs/tailwindcss": "^6.2.0",
     "@pinia/nuxt": "^0.4.6",
     "@vueuse/core": "^9.6.0",
     "@vueuse/nuxt": "^9.6.0",
-    "serve": "^13.0.2",
-    "typescript": "^4.8.4",
-    "pinia": "^2.0.23",
-    "nuxt-icon": "^0.1.8",
-    "vue": "^3.2.41",
-    "vue-tsc": "^1.0.9",
-    "webpack": ">=5.0.0 <6.0.0",
     "eslint": "^8.27.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-nuxt": "^3.2.0",
     "eslint-plugin-prettier": "^4.2.1",
+    "husky": "^8.0.2",
+    "nuxt": "3.0.0",
+    "nuxt-icon": "^0.1.8",
+    "pinia": "^2.0.23",
     "prettier": "^2.7.1",
-    "husky": "^8.0.2"
+    "serve": "^13.0.2",
+    "typescript": "^4.8.4",
+    "vue": "^3.2.41",
+    "vue-tsc": "^1.0.9",
+    "webpack": ">=5.0.0 <6.0.0"
   },
   "lint-staged": {
     "**/*.{js,ts,vue,html}": [
       "pnpm lintfix"
     ]
+  },
+  "dependencies": {
+    "@kyvg/vue3-notification": "^2.7.0",
+    "axios": "^1.2.2"
   }
 }

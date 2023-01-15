@@ -8,10 +8,12 @@ const props = defineProps({
     required: true,
   },
 })
-
-const { file, alt, title } = toRefs(props.image)
 </script>
 
 <template>
-  <img :src="file" :alt="alt" :title="title" />
+  <img
+    :src="props.image.file"
+    :alt="props.image.alt"
+    :title="props.image.title"
+  />
 </template>
