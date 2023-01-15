@@ -39,4 +39,11 @@ export default defineNuxtConfig({
       favicon: true,
     },
   },
+
+  postcss: {
+    plugins: {
+      tailwindcss: {},
+      autoprefixer: {},
+    },
+  },
 })
