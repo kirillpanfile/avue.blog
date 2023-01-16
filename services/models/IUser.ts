@@ -46,3 +46,9 @@ export default interface IUser {
     // aici o sa mearga linkuri la userii pe care ii urmaresc
   }
 }
+
+export interface IUserRegister {
+  username: string
+  password: string
+  email: string
+}

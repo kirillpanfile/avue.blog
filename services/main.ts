@@ -10,12 +10,6 @@ import HttpStatusCodes from './common/HttpStatusCodes'
 
 const baseURL = import.meta.env.VITE_API_URL
 
-type PostPutPatchData = {
-  url: string
-  data?: any
-  config?: AxiosRequestConfig
-}
-
 const validateBaseUrl = (url: unknown): url is string => {
   if (url && typeof url === 'string') return true
   return false
@@ -60,7 +54,7 @@ const onResponseError = (error: AxiosError<unknown>): Promise<never> => {
   return Promise.reject(error.response)
 }
 
-class ApiClent {
+class ApiClient {
   protected axios: AxiosInstance
 
   constructor() {
@@ -87,21 +81,29 @@ class ApiClent {
     return response.data
   }
 
-  protected async post<T>({ url, data, config }: PostPutPatchData): Promise<T> {
+  protected async post<T>(
+    url: string,
+    data?: T,
+    config?: AxiosRequestConfig
+  ): Promise<T> {
     const response = await this.axios.post(url, data, config)
     return response.data
   }
 
-  protected async put<T>({ url, data, config }: PostPutPatchData): Promise<T> {
+  protected async put<T>(
+    url: string,
+    data?: T,
+    config?: AxiosRequestConfig
+  ): Promise<T> {
     const response = await this.axios.put(url, data, config)
     return response.data
   }
 
-  protected async patch<T>({
-    url,
-    data,
-    config,
-  }: PostPutPatchData): Promise<T> {
+  protected async patch<T>(
+    url: string,
+    data?: T,
+    config?: AxiosRequestConfig
+  ): Promise<T> {
     const response = await this.axios.patch(url, data, config)
     return response.data
   }
@@ -115,4 +117,4 @@ class ApiClent {
   }
 }
 
-export default ApiClent
+export default ApiClient

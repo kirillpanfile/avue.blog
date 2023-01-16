@@ -4,7 +4,9 @@ import {
   LargeArticle as article,
   TinyArticle as tinyArticle,
 } from '@/constants/articles'
-
+import { useAuthStore } from '~~/store/auth'
+const store = useAuthStore()
+console.log(store)
 const ShowCaseArticle = defineAsyncComponent(async function () {
   return await import(
     /* webpackChunkName: "ShowCaseArticle" */ '@/components/article/ShowCaseArticle.vue'
