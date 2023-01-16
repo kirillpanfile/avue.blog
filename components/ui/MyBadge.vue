@@ -1,4 +1,4 @@
-<script lang="ts" setup>
+<script setup lang="ts">
 interface Props {
   title: string
 }
@@ -20,6 +20,7 @@ const getIcon = (iconName: String) => {
   return logo
 }
 </script>
+
 <template>
   <div
     class="px-8 py-4 outline-2 w-[350px] outline outline-black flex items-center gap-8 text-lg font-medium cursor-pointer bg-white hover:bg-gray-200"

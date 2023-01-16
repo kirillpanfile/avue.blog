@@ -19,7 +19,10 @@ export default defineNuxtConfig({
     },
 
     pageTransition: { name: 'page', mode: 'out-in' },
+    layoutTransition: { name: 'layout', mode: 'out-in' },
   },
+
+  css: ['~/assets/css/transitions.css'],
 
   typescript: {
     strict: true,

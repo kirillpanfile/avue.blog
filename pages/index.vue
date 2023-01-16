@@ -1,24 +1,8 @@
 <script setup lang="ts">
-import appService from '~~/services/app.service'
 import {
   LargeArticle as article,
   TinyArticle as tinyArticle,
 } from '@/constants/articles'
-import { useAuthStore } from '~~/store/auth'
-const store = useAuthStore()
-console.log(store)
-const ShowCaseArticle = defineAsyncComponent(async function () {
-  return await import(
-    /* webpackChunkName: "ShowCaseArticle" */ '@/components/article/ShowCaseArticle.vue'
-  )
-})
-const ShowTinyCaseArticle = defineAsyncComponent(async function () {
-  return await import(
-    /* webpackChunkName: "ShowCaseArticle" */ '@/components/article/ShowTinyCaseArticle.vue'
-  )
-})
-
-appService.getArticle()
 </script>
 
 <template>
@@ -39,7 +23,11 @@ appService.getArticle()
         voluptatem.
       </p>
     </section>
-    <ShowCaseArticle :article="article" />
-    <ShowTinyCaseArticle :article="tinyArticle" />
+    <LazyArticleShowCaseArticle :article="article" class="mt-12 mb-12" />
+    <div class="flex mt-8 justify-between mb-12">
+      <LazyArticleShowTinyCaseArticle :article="tinyArticle" />
+      <LazyArticleShowTinyCaseArticle :article="tinyArticle" />
+      <LazyArticleShowTinyCaseArticle :article="tinyArticle" />
+    </div>
   </div>
 </template>

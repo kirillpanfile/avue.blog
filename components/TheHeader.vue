@@ -1,16 +1,35 @@
 <script setup lang="ts">
+const router = useRouter()
+
 const links = ref<{ title: string; path: string }[]>([
-  { title: 'Articles', path: '/' },
-  { title: 'Categories', path: '/' },
-  { title: 'Search', path: '/' },
-  { title: 'About', path: '/' },
-  { title: 'Sign In', path: '/' },
+  { title: 'Articles', path: '/articles' },
+  { title: 'Sign In', path: '/auth/login' },
+  { title: 'About', path: '/about' },
 ])
 
-const icons = ref<{ name: string; path: string }[]>([
-  { name: 'grommet-icons:github', path: '/' },
-  { name: 'material-symbols:bedtime-outline-rounded', path: '/' },
+const icons = ref<{ name: string; path: string; title: string }[]>([
+  {
+    title: 'github',
+    name: 'grommet-icons:github',
+    path: 'https://github.com/kirillpanfile/',
+  },
+  {
+    title: 'color',
+    name: 'material-symbols:bedtime-outline-rounded',
+    path: '/',
+  },
 ])
+
+const handleIconsClick = (title: string): void => {
+  switch (title) {
+    case 'github':
+      window.open('https://github.com/kirillpanfile/', '_blank')
+      break
+    case 'color':
+      document.body.classList.toggle('dark')
+      break
+  }
+}
 </script>
 
 <template>
@@ -28,8 +47,12 @@ const icons = ref<{ name: string; path: string }[]>([
         <li v-for="({ title, path }, index) in links" :key="index">
           <nuxt-link :to="path">{{ title }}</nuxt-link>
         </li>
-        <li v-for="({ name }, index) in icons" :key="index">
-          <Icon :name="name" class="w-5 h-5" />
+        <li
+          v-for="({ name, title }, index) in icons"
+          :key="index"
+          @click="handleIconsClick(title)"
+        >
+          <Icon :name="name" class="w-5 h-5 cursor-pointer" />
         </li>
       </nav>
     </div>
