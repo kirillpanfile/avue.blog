@@ -24,13 +24,26 @@ const icons = ref<{ name: string; path: string }[]>([
           title="A VUE BLOG"
         />
       </nuxt-link>
-      <nav class="flex gap-8 items-center list-none">
-        <li v-for="({ title, path }, index) in links" :key="index">
+      <nav class="flex sm:gap-8 gap-6 items-center list-none">
+        <li
+          v-for="({ title, path }, index) in links"
+          :key="index"
+          class="hidden sm:block"
+        >
           <nuxt-link :to="path">{{ title }}</nuxt-link>
         </li>
         <li v-for="({ name }, index) in icons" :key="index">
           <Icon :name="name" class="w-5 h-5" />
         </li>
+        <ul
+          class="flex sm:hidden flex-col justify-between gap-1 cursor-pointer mr-2"
+        >
+          <li
+            v-for="(item, index) in 3"
+            :key="index"
+            class="w-8 h-1 bg-black rounded-sm"
+          ></li>
+        </ul>
       </nav>
     </div>
   </header>

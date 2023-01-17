@@ -18,16 +18,15 @@ defineProps({
 
 <template>
   <article
-    class="flex flex-row p-1 bg-white w-full max-h-72 h-full border border-gray-100 shadow-sm mt-8"
+    class="flex md:flex-row flex-col p-1 bg-white w-full h-full border border-gray-100 shadow-sm mt-8"
   >
-    <div class="relative">
-      <MyImage :image="article.image" class="max-w-lg object-cover" />
-
+    <div class="relative sm:max-w-lg max-w-full">
+      <MyImage :image="article.image" class="sm:max-w-lg object-cover" />
       <div
-        class="top-0 left-0 h-full absolute flex justify-center ml-14 flex-col"
+        class="flex flex-col gap-4 absolute top-0 left-0 h-full w-full justify-center p-2"
       >
-        <strong class="text-3xl"> {{ article.emoji }} </strong>
-        <h1 class="text-white font-bold text-3xl mt-4 pr-4">
+        <strong class="text-3xl">{{ article.emoji }}</strong>
+        <h1 class="text-white font-bold sm:text-3xl text-xl">
           {{ article.title }}
         </h1>
       </div>
@@ -37,10 +36,12 @@ defineProps({
         {{ article.category }} •
         <span class="font-normal">{{ article.timestamp }} h ago</span>
       </h6>
-      <strong class="text-gray-700 font-bold text-2xl mt-2 block"
+      <strong class="text-gray-700 font-bold sm:text-2xl text-xl mt-2 block"
         >Optimizing CSS for faster page loads
       </strong>
-      <p class="mt-4 pr-4">
+      <p
+        class="mt-4 pr-4 max-h-36 h-36 w-full sm:text-base text-sm text-ellipsis overflow-hidden"
+      >
         {{ article.description }}
       </p>
 
