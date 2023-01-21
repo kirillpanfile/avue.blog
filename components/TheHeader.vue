@@ -1,4 +1,14 @@
 <script setup lang="ts">
+type Tlogo = {
+  link: string
+  colorScheme: string
+}
+const isDark = ref(false)
+const logos: Tlogo[] = [
+  { link: 'https://i.ibb.co/tsS37Dp/icon.png', colorScheme: 'light' },
+  { link: 'https://i.ibb.co/HNv1ydK/logo-dark.png', colorScheme: 'dark' },
+]
+
 const links = ref<{ title: string; path: string }[]>([
   { title: 'Articles', path: '/articles' },
   { title: 'Sign In', path: '/auth/login' },
@@ -18,28 +28,28 @@ const icons = ref<{ name: string; path: string; title: string }[]>([
   },
 ])
 
-const isDark = ref(false)
+const currentLogo = computed(() => {
+  if (!process.client) return
+  return logos.find((logo) => {
+    return logo.colorScheme === (isDark.value ? 'dark' : 'light')
+  })
+})
 
 const setIsDark = (value: boolean): void => {
   if (!process.client) return
-
   isDark.value = value
+
   localStorage.setItem('isDark', JSON.stringify(value))
-
-  if (value) document.body.classList.add('dark')
-  else document.body.classList.remove('dark')
-}
-
-const deviceColorSheme = (): void => {
-  if (window.matchMedia('(prefers-color-scheme: dark)').matches) setIsDark(true)
-  else setIsDark(false)
+  if (value) {
+    document.body.classList.add('dark')
+  } else {
+    document.body.classList.remove('dark')
+  }
 }
 
 if (process.client) {
-  deviceColorSheme()
-  window
-    .matchMedia('(prefers-color-scheme: dark)')
-    .addEventListener('change', deviceColorSheme)
+  const isDarkStorage = localStorage.getItem('isDark')
+  if (isDarkStorage) setIsDark(JSON.parse(isDarkStorage))
 }
 
 const handleIconsClick = (title: string): void => {
@@ -50,11 +60,12 @@ const handleIconsClick = (title: string): void => {
 </script>
 
 <template>
-  <header class="w-full border border-b p-2">
+  <header class="w-full border-b p-2 dark:border-gray-800">
     <div class="max-w-6xl mx-auto flex items-center justify-between">
       <nuxt-link to="/">
         <img
-          src="https://i.ibb.co/tsS37Dp/icon.png"
+          v-if="currentLogo"
+          :src="currentLogo.link"
           class="w-16 h-16"
           alt="logo"
           title="A VUE BLOG"

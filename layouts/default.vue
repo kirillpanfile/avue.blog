@@ -9,7 +9,9 @@ const TheFooter = defineAsyncComponent(async function () {
 </script>
 
 <template>
-  <main class="flex flex-col min-h-screen">
+  <main
+    class="flex flex-col min-h-screen bg-gray-100 font-sans antialiased dark:text-slate-100 dark:bg-black transition-colors duration-300"
+  >
     <TheHeader />
     <slot></slot>
     <TheFooter />
