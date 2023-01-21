@@ -1,8 +1,21 @@
 <svg xmlns="http://www.w3.org/2000/svg">
- <defs>
-     <symbol id="facebook" viewBox="0 0 24 24">
+  <defs>
+    <symbol id="facebook" viewBox="0 0 24 24">
       <title>Facebook</title>
-      <path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"/>
+      <path
+        d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z" />
     </symbol>
- </defs>
+    <symbol id="vue" viewBox="0 0 24 24">
+      <g xmlns="http://www.w3.org/2000/svg" transform="matrix(1.3333 0 0 -1.3333 -76.311 313.34)">
+        <g transform="translate(178.06 235.01)">
+          <path d="m0 0-22.669-39.264-22.669 39.264h-75.491l98.16-170.02 98.16 170.02z"
+            fill="#41b883" />
+        </g>
+        <g transform="translate(178.06 235.01)">
+          <path d="m0 0-22.669-39.264-22.669 39.264h-36.227l58.896-102.01 58.896 102.01z"
+            fill="#34495e" />
+        </g>
+      </g>
+    </symbol>
+  </defs>
 </svg>

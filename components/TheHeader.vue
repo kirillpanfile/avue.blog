@@ -60,8 +60,8 @@ const handleIconsClick = (title: string): void => {
 </script>
 
 <template>
-  <header class="w-full border-b p-2 dark:border-gray-800">
-    <div class="max-w-6xl mx-auto flex items-center justify-between">
+  <header class="w-full border-b p-2 dark:border-gray-800 border-gray-300">
+    <div class="max-w-7xl mx-auto flex items-center justify-between">
       <nuxt-link to="/">
         <img
           v-if="currentLogo"

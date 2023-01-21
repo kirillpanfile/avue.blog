@@ -10,7 +10,7 @@ const TheFooter = defineAsyncComponent(async function () {
 
 <template>
   <main
-    class="flex flex-col min-h-screen bg-gray-100 font-sans antialiased dark:text-slate-100 dark:bg-black transition-colors duration-300"
+    class="flex flex-col min-h-screen bg-gray-200 font-sans antialiased dark:text-slate-100 dark:bg-black transition-colors duration-300"
   >
     <TheHeader />
     <slot></slot>

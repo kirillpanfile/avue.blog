@@ -1,8 +1,10 @@
 <script setup lang="ts"></script>
 
 <template>
-  <footer class="w-full border-t p-2 h-24 mt-auto dark:border-gray-800">
-    <div class="max-w-6xl mx-auto flex items-center justify-between h-full">
+  <footer
+    class="w-full border-t p-2 h-24 mt-auto dark:border-gray-800 border-gray-300"
+  >
+    <div class="max-w-7xl mx-auto flex items-center justify-between h-full">
       <div>
         <h1 class="font-semibold mb-1 text-base">A VUE BLOG</h1>
 

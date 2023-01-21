@@ -51,6 +51,7 @@
     "@nuxtjs/auth-next": "5.0.0-1667386184.dfbbb54",
     "axios": "^1.2.2",
     "nuxt-swiper": "^0.1.9",
+    "swiper": "^8.4.6",
     "tailwindcss": "^3.2.4"
   },
   "browserslist": [
