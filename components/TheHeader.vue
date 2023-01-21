@@ -1,6 +1,4 @@
 <script setup lang="ts">
-const router = useRouter()
-
 const links = ref<{ title: string; path: string }[]>([
   { title: 'Articles', path: '/articles' },
   { title: 'Sign In', path: '/auth/login' },
@@ -20,21 +18,40 @@ const icons = ref<{ name: string; path: string; title: string }[]>([
   },
 ])
 
+const isDark = ref(false)
+
+const setIsDark = (value: boolean): void => {
+  if (!process.client) return
+
+  isDark.value = value
+  localStorage.setItem('isDark', JSON.stringify(value))
+
+  if (value) document.body.classList.add('dark')
+  else document.body.classList.remove('dark')
+}
+
+const deviceColorSheme = (): void => {
+  if (window.matchMedia('(prefers-color-scheme: dark)').matches) setIsDark(true)
+  else setIsDark(false)
+}
+
+if (process.client) {
+  deviceColorSheme()
+  window
+    .matchMedia('(prefers-color-scheme: dark)')
+    .addEventListener('change', deviceColorSheme)
+}
+
 const handleIconsClick = (title: string): void => {
-  switch (title) {
-    case 'github':
-      window.open('https://github.com/kirillpanfile/', '_blank')
-      break
-    case 'color':
-      document.body.classList.toggle('dark')
-      break
-  }
+  if (title === 'color') return setIsDark(!isDark.value)
+  if (title === 'github')
+    window.open('https://github.com/kirillpanfile/', '_blank')
 }
 </script>
 
 <template>
   <header class="w-full border border-b p-2">
-    <div class="max-w-7xl mx-auto flex items-center justify-between">
+    <div class="max-w-6xl mx-auto flex items-center justify-between">
       <nuxt-link to="/">
         <img
           src="https://i.ibb.co/tsS37Dp/icon.png"

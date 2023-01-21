@@ -35,6 +35,8 @@ export default defineNuxtConfig({
     '@nuxt/image-edge',
     'nuxt-icon',
     '@kevinmarrec/nuxt-pwa',
+    'nuxt-swiper',
+    // '@nuxtjs/auth-next',
   ],
 
   pwa: {

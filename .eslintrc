@@ -15,7 +15,7 @@
     "vue/no-multiple-template-root": "off",
     "@typescript-eslint/no-unused-vars": "off",
     "no-console": "off",
-    "linebreak-style": ["error", "unix"],
+    "linebreak-style": ["error", "windows"],
     "prettier/prettier": [
       "error",
       {

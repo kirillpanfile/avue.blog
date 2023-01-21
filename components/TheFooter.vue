@@ -2,7 +2,7 @@
 
 <template>
   <footer class="w-full border border-b p-2 h-24 mt-auto">
-    <div class="max-w-7xl mx-auto flex items-center justify-between h-full">
+    <div class="max-w-6xl mx-auto flex items-center justify-between h-full">
       <div>
         <h1 class="font-semibold mb-1 text-base">A VUE BLOG</h1>
 

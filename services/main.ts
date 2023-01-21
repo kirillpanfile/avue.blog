@@ -55,7 +55,7 @@ const onResponseError = (error: AxiosError<unknown>): Promise<never> => {
 }
 
 class ApiClient {
-  protected axios: AxiosInstance
+  axios: AxiosInstance
 
   constructor() {
     if (!validateBaseUrl(baseURL)) {
@@ -64,13 +64,12 @@ class ApiClient {
 
     const axiosInstance = axios.create({
       baseURL,
-      withCredentials: true,
-      timeout: 5000,
+      // withCredentials: true,
+      // timeout: 5000,
     })
+    // axiosInstance.defaults.headers.common['Access-Control-Allow-Origin'] = '*'
 
-    axiosInstance.defaults.headers.get.Accepts = 'application/json'
-    axiosInstance.defaults.headers.common['Access-Control-Allow-Origin'] = '*'
-
+    // axiosInstance.defaults.headers.get.Accepts = 'application/json'
     axiosInstance.interceptors.response.use(onResponseSuccess, onResponseError)
 
     this.axios = axiosInstance

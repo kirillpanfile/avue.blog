@@ -1,14 +1,10 @@
 <script setup lang="ts">
 const TheHeader = defineAsyncComponent(async function () {
-  return await import(
-    /*  webpackChunkName: "TheHeader" */ '@/components/TheHeader.vue'
-  )
+  return await import('@/components/TheHeader.vue')
 })
 
 const TheFooter = defineAsyncComponent(async function () {
-  return await import(
-    /* webpackChunkName: "TheFooter" */ '@/components/TheFooter.vue'
-  )
+  return await import('@/components/TheFooter.vue')
 })
 </script>
 
